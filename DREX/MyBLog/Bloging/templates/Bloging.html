@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+	{% block page_content %}
+
+	<div  class="col-md-8 offset-md-2">
+		<h1>Bloging Index</h1>
+		<hr>
+		{% for t in Tut %}
+		<h2><a  href="{% url 'Bloging_detail' t.pk %}">{{ t.tutorial_Title}}</a></h2>
+		<p>{{ t.tutorial_Body | slice:':400' }}...</p>
+		{% endfor %}
+	</div>
+
+	{%endblock%}
+
+	
